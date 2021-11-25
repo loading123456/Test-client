@@ -8,7 +8,6 @@ var PossitionMain
 var MyId 
 
 func _ready():
-	#Test github
 	startClient()
 
 	
