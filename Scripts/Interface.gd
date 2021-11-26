@@ -48,6 +48,8 @@ func Open_town(town):
 		soldier.get_node("Id").text = str(i.Id)
 		$Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
 	
+	$Town/TabContainer/Outside/Destinations.clear()
+	
 	$Town/TabContainer/Outside/Destinations.add_item("Center - Self "+str(town), town)
 	if town/5 > 0:
 		$Town/TabContainer/Outside/Destinations.add_item("Top - Town "+str(town-5), town-5)
@@ -131,6 +133,7 @@ func _on_ComeBack_pressed():
 	Net.rpc("Come_back",data)
 	Storage.Update_all_town_info()
 	_on_Exit_pressed()
+	
 
 func _on_MoveTroop_pressed():
 	var data = []

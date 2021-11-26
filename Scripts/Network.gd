@@ -41,10 +41,11 @@ remote func Before_pick_capital():
 
 remote func Start_peace_time(towns, soldiers, history):
 	print("Start peace time ")
-	Storage.Town_status = "Open_interface"
+	
 	Storage.Towns = towns
 	Storage.Soldiers = soldiers
 	Storage.History = history
+	Storage.Town_status = "Open_interface"
 	
 	$"/root/Main/Game/Right/HBoxContainer/Flag0".self_modulate = "#7f7f7f"
 	$"/root/Main/Game/Right/HBoxContainer/Flag1".self_modulate = "#7f7f7f"

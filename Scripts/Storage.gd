@@ -14,6 +14,7 @@ func set_town_status(value):
 		"Pick_capital":
 			$"/root/Main/Game/Right/Notify".text = "Pick capital"
 		"Open_interface":
+			Update_all_town_info()
 			$"/root/Main/Game/Right/Notify".text = "The peace time is started"
 			Time = 60
 			Count_time()
