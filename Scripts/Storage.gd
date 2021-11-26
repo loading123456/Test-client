@@ -19,15 +19,9 @@ func set_town_status(value):
 			Count_time()
 			
 var Towns = {0:{"Master":null}}
-var Time = 60 setget set_time
+var Time = 60 
 
-func set_time(value):
-	Time = value
-	$"/root/Main/Game/Right/Time".text = str(Time)
-	if Time == 0:
-		Net.rpc("Ready")
-		Town_status = null
-	
+
 #{Property, master}
 
 var History = {0:{}}
@@ -72,9 +66,12 @@ func Update_all_town_info():
 		$"/root/Main/Game/Left/GridContainer".get_child(i).Update_info()
 
 func Count_time():
+	$"/root/Main/Game/Right/Time".text = str(Time)
 	if Time > 0 :
 		Time -= 1
 	else:
+		Net.rpc("Ready")
+		Town_status = null
 		return
 	yield(get_tree().create_timer(1),"timeout")
 	Count_time()

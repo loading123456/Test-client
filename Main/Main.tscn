@@ -1813,7 +1813,6 @@ __meta__ = {
 }
 
 [node name="Outside" type="Tabs" parent="Interface/Town/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -2084,7 +2083,6 @@ __meta__ = {
 }
 
 [node name="History" type="Tabs" parent="Interface/Town/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0

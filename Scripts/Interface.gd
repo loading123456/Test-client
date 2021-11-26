@@ -32,7 +32,7 @@ func Open_town(town):
 		soldier.get_node("HBoxContainer/Address/Value").text = str(i.Address)
 		soldier.get_node("HBoxContainer/Destination/Value").text = str(i.Destination)
 		soldier.get_node("HBoxContainer/Country/Value").text = str(i.Country)
-		soldier.get_node("HBoxContainer/Property").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
+		soldier.get_node("HBoxContainer/FiveElements").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
 		soldier.get_node("Id").text = str(i.Id)
 		$Town/TabContainer/Inside/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
 	
@@ -44,9 +44,9 @@ func Open_town(town):
 		soldier.get_node("HBoxContainer/Address/Value").text = str(i.Address)
 		soldier.get_node("HBoxContainer/Destination/Value").text = str(i.Destination)
 		soldier.get_node("HBoxContainer/Country/Value").text = str(i.Country)
-		soldier.get_node("HBoxContainer/Property").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
+		soldier.get_node("HBoxContainer/FiveElements").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
 		soldier.get_node("Id").text = str(i.Id)
-		$Town/TabContainer/Inside/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
+		$Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
 	
 	$Town/TabContainer/History/HBoxContainer/Years.clear()
 	for i in Storage.History[town]:
@@ -103,7 +103,7 @@ func show_history():
 			soldier.get_node("HBoxContainer/Address/Value").text = str(i.Address)
 			soldier.get_node("HBoxContainer/Destination/Value").text = str(i.Destination)
 			soldier.get_node("HBoxContainer/Country/Value").text = str(i.Country)
-			soldier.get_node("HBoxContainer/Property").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
+			soldier.get_node("HBoxContainer/FiveElements").texture = load("res://Assets/Soldiers/Five_elements/"+str(i.Five_elements) + ".png")
 			soldier.get_node("Id").text = str(i.Id)
 			$Town/TabContainer/History/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
 		
