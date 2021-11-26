@@ -29,11 +29,12 @@ remote func Init_match(data,player_id):
 	Storage.Update_all_town_info()
 	
 	
-remote func Before_pick_town(town):
-	if town != null:
-		Storage.Towns[town].Master = (Storage.Id_in_match+1)%2
-		$"/root/Main/Game/Left/GridContainer".get_child(town).get_node("Flag").texture = load("res://Assets/Flags/Flag"+str((Storage.Id_in_match+1)%2) +".png")
+remote func Before_pick_town():
 	Storage.Town_status = "Pick_town"
+	
+remote func Another_player_pick_town(town):
+	Storage.Towns[town].Master = (Storage.Id_in_match+1)%2
+	$"/root/Main/Game/Left/GridContainer".get_child(town).get_node("Flag").texture = load("res://Assets/Flags/Flag"+str((Storage.Id_in_match+1)%2) +".png")
 
 remote func Before_pick_capital():
 	Storage.Town_status = "Pick_capital"
