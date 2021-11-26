@@ -45,7 +45,9 @@ remote func Start_peace_time(towns, soldiers, history):
 	Storage.History = history
 	$"/root/Main/Game/Right/HBoxContainer/Flag0".self_modulate = Color(127, 127, 127, 255)
 	$"/root/Main/Game/Right/HBoxContainer/Flag1".self_modulate = Color(127, 127, 127, 255)
-
+	print(towns)
+	print(soldiers)
+	print(history)
 remote func Another_player_ready():
 	get_node("Right/HBoxContainer/Flag"+str(Storage.Id_in_match+1)%2).self_modulate = Color(255, 255, 255, 255)
 

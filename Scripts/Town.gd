@@ -19,6 +19,7 @@ func _on_Town0_pressed():
 			if Storage.Towns[get_index()].Master == Storage.Id_in_match:
 				Net.rpc("After_pick_capital",get_index())
 				Storage.Town_status = null
+				$King.visible = true
 				$"/root/Main/Game/Right/Notify".text = "Wait a minute"
 			else:
 				$"/root/Main/Game/Right/Notify".text = "Pick capital again"
