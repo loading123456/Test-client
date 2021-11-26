@@ -8,7 +8,7 @@ func _on_Exit_pressed():
 		$Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer.get_child(i).queue_free()
 	for i in $Town/TabContainer/History/SoldiersInfo/ScrollContainer/VBoxContainer.get_child_count():
 		$Town/TabContainer/History/SoldiersInfo/ScrollContainer/VBoxContainer.get_child(i).queue_free()
-
+	$Town/TabContainer/Outside/Destinations.clear()
 
 func _on_CheckBoxInside_toggled(button_pressed):
 	for i in $Town/TabContainer/Inside/SoldiersInfo/ScrollContainer/VBoxContainer.get_child_count():
