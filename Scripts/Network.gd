@@ -8,7 +8,7 @@ var PossitionMain
 var MyId 
 
 func _ready():
-	#Kaaaaaaaaaaaaaaaaaaa
+	#Test pull
 	startClient()
 
 	
