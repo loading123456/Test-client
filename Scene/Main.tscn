@@ -1,24 +1,24 @@
 [gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Fonts/Dynalight/Dynalight-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Towns/Hover.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Towns/2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Towns/Pressed.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Flags/Flag0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Towns/Hover.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Town.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Interface.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Fonts/Dynalight/Dynalight-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/Soldiers/Five_elements/5.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Flags/Flag1.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Soldiers/Bot.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/Interface.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/Town.gd" type="Script" id=11]
-[ext_resource path="res://Scene/Soldier.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Towns/2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Towns/Pressed.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Flags/Flag1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Soldiers/Bot.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Flags/Flag0.png" type="Texture" id=12]
+[ext_resource path="res://Scene/Soldier.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.121569, 0.952941, 0.529412, 1 )
@@ -32,22 +32,22 @@ corner_radius_bottom_left = 75
 
 [sub_resource type="DynamicFont" id=5]
 size = 50
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 30
-font_data = ExtResource( 2 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 20
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.235294, 1, 0, 1 )
@@ -56,12 +56,12 @@ bg_color = Color( 0.235294, 1, 0, 1 )
 bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 
 [sub_resource type="DynamicFont" id=14]
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0, 1, 0.0901961, 1 )
@@ -71,14 +71,14 @@ bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 30
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [node name="Main" type="Node"]
 
 [node name="Game" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 13 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -108,10 +108,10 @@ __meta__ = {
 [node name="Town0" type="TextureButton" parent="Game/Left/GridContainer"]
 margin_right = 100.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town0"]
 anchor_left = 0.5
@@ -119,7 +119,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -164,10 +164,10 @@ __meta__ = {
 margin_left = 104.0
 margin_right = 204.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town1"]
 anchor_left = 0.5
@@ -175,7 +175,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,10 +220,10 @@ __meta__ = {
 margin_left = 208.0
 margin_right = 308.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town2"]
 anchor_left = 0.5
@@ -231,7 +231,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -276,10 +276,10 @@ __meta__ = {
 margin_left = 312.0
 margin_right = 412.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town3"]
 anchor_left = 0.5
@@ -287,7 +287,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -332,10 +332,10 @@ __meta__ = {
 margin_left = 416.0
 margin_right = 516.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town4"]
 anchor_left = 0.5
@@ -343,7 +343,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -388,10 +388,10 @@ __meta__ = {
 margin_top = 104.0
 margin_right = 100.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town5"]
 anchor_left = 0.5
@@ -399,7 +399,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -445,10 +445,10 @@ margin_left = 104.0
 margin_top = 104.0
 margin_right = 204.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town6"]
 anchor_left = 0.5
@@ -456,7 +456,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -502,10 +502,10 @@ margin_left = 208.0
 margin_top = 104.0
 margin_right = 308.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town7"]
 anchor_left = 0.5
@@ -513,7 +513,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -559,10 +559,10 @@ margin_left = 312.0
 margin_top = 104.0
 margin_right = 412.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town8"]
 anchor_left = 0.5
@@ -570,7 +570,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -616,10 +616,10 @@ margin_left = 416.0
 margin_top = 104.0
 margin_right = 516.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town9"]
 anchor_left = 0.5
@@ -627,7 +627,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -672,10 +672,10 @@ __meta__ = {
 margin_top = 208.0
 margin_right = 100.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town10"]
 anchor_left = 0.5
@@ -683,7 +683,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -729,10 +729,10 @@ margin_left = 104.0
 margin_top = 208.0
 margin_right = 204.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town11"]
 anchor_left = 0.5
@@ -740,7 +740,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -786,10 +786,10 @@ margin_left = 208.0
 margin_top = 208.0
 margin_right = 308.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town12"]
 anchor_left = 0.5
@@ -797,7 +797,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -843,10 +843,10 @@ margin_left = 312.0
 margin_top = 208.0
 margin_right = 412.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town13"]
 anchor_left = 0.5
@@ -854,7 +854,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -900,10 +900,10 @@ margin_left = 416.0
 margin_top = 208.0
 margin_right = 516.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town14"]
 anchor_left = 0.5
@@ -911,7 +911,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -956,10 +956,10 @@ __meta__ = {
 margin_top = 312.0
 margin_right = 100.0
 margin_bottom = 412.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town15"]
 anchor_left = 0.5
@@ -967,7 +967,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1013,10 +1013,10 @@ margin_left = 104.0
 margin_top = 312.0
 margin_right = 204.0
 margin_bottom = 412.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town16"]
 anchor_left = 0.5
@@ -1024,7 +1024,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1070,10 +1070,10 @@ margin_left = 208.0
 margin_top = 312.0
 margin_right = 308.0
 margin_bottom = 412.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town17"]
 anchor_left = 0.5
@@ -1081,7 +1081,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1127,10 +1127,10 @@ margin_left = 312.0
 margin_top = 312.0
 margin_right = 412.0
 margin_bottom = 412.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town18"]
 anchor_left = 0.5
@@ -1138,7 +1138,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1184,10 +1184,10 @@ margin_left = 416.0
 margin_top = 312.0
 margin_right = 516.0
 margin_bottom = 412.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town19"]
 anchor_left = 0.5
@@ -1195,7 +1195,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1240,10 +1240,10 @@ __meta__ = {
 margin_top = 416.0
 margin_right = 100.0
 margin_bottom = 516.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town20"]
 anchor_left = 0.5
@@ -1251,7 +1251,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1297,10 +1297,10 @@ margin_left = 104.0
 margin_top = 416.0
 margin_right = 204.0
 margin_bottom = 516.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town21"]
 anchor_left = 0.5
@@ -1308,7 +1308,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1354,10 +1354,10 @@ margin_left = 208.0
 margin_top = 416.0
 margin_right = 308.0
 margin_bottom = 516.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town22"]
 anchor_left = 0.5
@@ -1365,7 +1365,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1411,10 +1411,10 @@ margin_left = 312.0
 margin_top = 416.0
 margin_right = 412.0
 margin_bottom = 516.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town23"]
 anchor_left = 0.5
@@ -1422,7 +1422,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1468,10 +1468,10 @@ margin_left = 416.0
 margin_top = 416.0
 margin_right = 516.0
 margin_bottom = 516.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 3 )
-script = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Flag" type="TextureRect" parent="Game/Left/GridContainer/Town24"]
 anchor_left = 0.5
@@ -1479,7 +1479,7 @@ anchor_right = 0.5
 margin_left = -25.0
 margin_right = 25.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1553,7 +1553,7 @@ margin_left = -25.0
 margin_top = 30.0
 margin_right = 25.0
 margin_bottom = 60.0
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1575,14 +1575,14 @@ __meta__ = {
 self_modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
 margin_right = 50.0
 margin_bottom = 30.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="Flag1" type="TextureRect" parent="Game/Right/HBoxContainer"]
 self_modulate = Color( 0.498039, 0.498039, 0.498039, 1 )
 margin_left = 54.0
 margin_right = 104.0
 margin_bottom = 30.0
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="Ready" type="Button" parent="Game/Right"]
 anchor_left = 0.5
@@ -1615,7 +1615,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 10 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1759,7 +1759,7 @@ margin_right = 534.0
 margin_bottom = 48.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="SoldiersInfo" type="Panel" parent="Interface/Town/TabContainer/Inside"]
 anchor_right = 1.0
@@ -1782,7 +1782,7 @@ margin_bottom = 380.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Soldier" parent="Interface/Town/TabContainer/Inside/SoldiersInfo/ScrollContainer/VBoxContainer" instance=ExtResource( 12 )]
+[node name="Soldier" parent="Interface/Town/TabContainer/Inside/SoldiersInfo/ScrollContainer/VBoxContainer" instance=ExtResource( 13 )]
 
 [node name="ComeBack" type="Button" parent="Interface/Town/TabContainer/Inside"]
 anchor_left = 0.5
@@ -1883,7 +1883,7 @@ margin_right = 165.0
 margin_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="FiveElements" type="TextureRect" parent="Interface/Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer/Soldier/HBoxContainer"]
 margin_left = 205.0
@@ -1893,7 +1893,7 @@ texture = ExtResource( 7 )
 
 [node name="Bot" type="Sprite" parent="Interface/Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer/Soldier/HBoxContainer/FiveElements"]
 position = Vector2( 32, 32 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 hframes = 60
 frame = 18
 
@@ -2182,7 +2182,7 @@ margin_right = 165.0
 margin_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="FiveElements" type="TextureRect" parent="Interface/Town/TabContainer/History/SoldiersInfo/ScrollContainer/VBoxContainer/Soldier/HBoxContainer"]
 margin_left = 205.0
@@ -2192,7 +2192,7 @@ texture = ExtResource( 7 )
 
 [node name="Bot" type="Sprite" parent="Interface/Town/TabContainer/History/SoldiersInfo/ScrollContainer/VBoxContainer/Soldier/HBoxContainer/FiveElements"]
 position = Vector2( 32, 32 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 hframes = 60
 frame = 18
 
