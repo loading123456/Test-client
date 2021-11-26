@@ -3,7 +3,7 @@ extends Node
 
 var Network = NetworkedMultiplayerENet.new()
 var Port = 1090
-var Ip = "127.0.0.1"
+var Ip = "192.168.0.100"
 var PossitionMain 
 var MyId 
 
@@ -26,7 +26,9 @@ remote func Init_match(data,player_id):
 	Storage.Towns = data
 	for i in range(25):
 		$"/root/Main/Game/Left/GridContainer".get_child(i).texture_normal = load("res://Assets/Towns/"+str(data[i].Five_elements)+".png")
-
+	Storage.Update_all_town_info()
+	
+	
 remote func Before_pick_town(town):
 	if town != null:
 		Storage.Towns[town].Master = (Storage.Id_in_match+1)%2

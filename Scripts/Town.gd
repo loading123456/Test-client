@@ -9,7 +9,9 @@ func _on_Town0_pressed():
 		"Pick_town":
 			if Storage.Towns[get_index()].Master == null:
 				Net.rpc("After_pick_town",get_index())
+				Storage.Towns[get_index()].Master = Storage.Id_in_match
 				Storage.Town_status = null
+				Update_info()
 				$"/root/Main/Game/Right/Notify".text = "Wait a minute"
 			else:
 				$"/root/Main/Game/Right/Notify".text = "Pick town again"
