@@ -39,16 +39,15 @@ remote func Before_pick_capital():
 	Storage.Town_status = "Pick_capital"
 
 remote func Start_peace_time(towns, soldiers, history):
+	print("Start peace time ")
 	Storage.Town_status = "Open_interface"
 	Storage.Towns = towns
 	Storage.Soldiers = soldiers
 	Storage.History = history
 	
-	$"/root/Main/Game/Right/HBoxContainer/Flag0".self_modulate = Color(127, 127, 127, 255)
-	$"/root/Main/Game/Right/HBoxContainer/Flag1".self_modulate = Color(127, 127, 127, 255)
-
-	print(soldiers)
+	$"/root/Main/Game/Right/HBoxContainer/Flag0".self_modulate = "#7f7f7f"
+	$"/root/Main/Game/Right/HBoxContainer/Flag1".self_modulate = "#7f7f7f"
 
 remote func Another_player_ready():
-	get_node("Right/HBoxContainer/Flag"+str(Storage.Id_in_match+1)%2).self_modulate = Color(255, 255, 255, 255)
+	get_node("Right/HBoxContainer/Flag"+str(Storage.Id_in_match+1)%2).self_modulate = Color(1, 1, 1, 1)
 

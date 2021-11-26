@@ -48,6 +48,17 @@ func Open_town(town):
 		soldier.get_node("Id").text = str(i.Id)
 		$Town/TabContainer/Outside/SoldiersInfo/ScrollContainer/VBoxContainer.add_child(soldier)
 	
+	$Town/TabContainer/Outside/Destinations.add_item("Center - Self "+str(town), town)
+	if town/5 > 0:
+		$Town/TabContainer/Outside/Destinations.add_item("Top - Town "+str(town-5), town-5)
+	if town/5 < 4:
+		$Town/TabContainer/Outside/Destinations.add_item("Down - Town "+str(town+5), town+5)
+	if town%5 >0:
+		$Town/TabContainer/Outside/Destinations.add_item("Left - Town "+str(town-1), town-1)
+	if town%5<4:
+		$Town/TabContainer/Outside/Destinations.add_item("Right - Town "+str(town+1), town+1)
+	
+	
 	$Town/TabContainer/History/HBoxContainer/Years.clear()
 	for i in Storage.History[town]:
 		$Town/TabContainer/History/HBoxContainer/Years.add_item("Year : "+str(i),i)
